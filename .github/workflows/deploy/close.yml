@@ -1,0 +1,27 @@
+name: Deploy Service Close
+
+on:
+  pull_request:
+    - main
+  paths:
+    - "packages/service-close/**"
+    - ".github/workflows/close.yml"
+
+jobs:
+  test-routine:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [12.x, 14.x]
+    
+    steps:
+      - uses: actions/checkout@v2
+      - name: Use NodeJs ${{ matrix.node-version}}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node-version}}
+        env:
+          NODE_ENV: test
+      - run: yarn
+      - run: yarn test

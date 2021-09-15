@@ -1,0 +1,38 @@
+{
+  "name": "@monorepo/service-close",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "start": "npm run dev",
+    "build": "npm run clean && tsc -b",
+    "clean": "rm -rf ./build && rm tsconfig.tsbuildinfo",
+    "dev": "ts-node-dev --respawn --transpile-only ./src/app.ts"
+  },
+  "dependencies": {
+    "dayjs": "^1.10.7",
+    "dotenv": "^10.0.0",
+    "koa": "^2.13.1",
+    "koa-basic-auth": "^4.0.0",
+    "koa-bodyparser": "^4.3.0",
+    "koa-logger": "^3.2.1",
+    "koa-mount": "^4.0.0",
+    "koa-router": "^10.1.1",
+    "koa2-cors": "^2.0.6",
+    "pino": "^6.13.2",
+    "pino-pretty": "^7.0.0"
+  },
+  "devDependencies": {
+    "@types/koa": "^2.13.4",
+    "@types/koa-basic-auth": "^2.0.4",
+    "@types/koa-bodyparser": "^4.3.3",
+    "@types/koa-logger": "^3.1.1",
+    "@types/koa-mount": "^4.0.1",
+    "@types/koa-router": "^7.4.4",
+    "@types/koa2-cors": "^2.0.2",
+    "@types/pino": "^6.3.11",
+    "ts-node": "^10.2.1",
+    "ts-node-dev": "^1.1.8",
+    "tsc-watch": "^4.5.0"
+  }
+}
