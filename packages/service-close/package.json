@@ -4,7 +4,7 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "start": "node build/app.js",
+    "start": "node build/src/app.js",
     "build": "npm run clean && tsc -b",
     "clean": "rm -rf ./build",
     "start:dev": "ts-node-dev --respawn --transpile-only ./src/app.ts"
