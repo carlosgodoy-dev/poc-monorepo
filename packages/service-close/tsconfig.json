@@ -1,6 +1,16 @@
 {
-    "extends": "../../tsconfig.json",
+    "compilerOptions": {
+        "target": "es6",
+        "module": "commonjs",
+        "resolveJsonModule": true,
+        "experimentalDecorators": true,
+        "esModuleInterop":true,
+        "moduleResolution": "node",
+        "skipLibCheck": true,
+        "composite": true
+    },
     "include": [
         "./src/**/*"
-    ]
+    ],
+    "exclude": ["node_modules", "build", "coverage"]
 }
