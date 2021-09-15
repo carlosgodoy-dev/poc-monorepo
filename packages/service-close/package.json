@@ -4,10 +4,10 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "start": "npm run dev",
+    "start": "node build/app.js",
     "build": "npm run clean && tsc -b",
-    "clean": "rm -rf ./build && rm tsconfig.tsbuildinfo",
-    "dev": "ts-node-dev --respawn --transpile-only ./src/app.ts"
+    "clean": "rm -rf ./build",
+    "start:dev": "ts-node-dev --respawn --transpile-only ./src/app.ts"
   },
   "dependencies": {
     "dayjs": "^1.10.7",
