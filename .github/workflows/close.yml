@@ -26,3 +26,19 @@ jobs:
           NODE_ENV: test
       - run: yarn
       - run: yarn test
+  
+  deploy-routine:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: Release service Close
+        uses: akhileshns/heroku-deploy@v3.0.4
+        with:
+          heroku_api_key: ${{secrets.HEROKU_API_KEY}}
+          heroku_app_name: "poc-monorepo-astro"
+          heroku_email: ${{secrets.HEROKU_EMAIL}}
+        env:
+          HD_APP_BASE: "packages/service-close"
+
+
